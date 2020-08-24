@@ -11,57 +11,75 @@ import java.util.Arrays;
  * @author zrafique
  */
 public class ArrayIns {
-    private long[] a;                 // ref to array a
+   private long[] a;                 // ref to array a
    private int nElems;               // number of data items
-//--------------------------------------------------------------
+
+   //--------------------------------------------------------------
    public ArrayIns(int max)          // constructor
-      {
+   {
       a = new long[max];                 // create the array
       nElems = 0;                        // no items yet
-      }
-//--------------------------------------------------------------
+   }
+
+   //--------------------------------------------------------------
    public void insert(long value)    // put element into array
-      {
+   {
       a[nElems] = value;             // insert it
       nElems++;                      // increment size
-      }
-//--------------------------------------------------------------
+   }
+
+   //--------------------------------------------------------------
    public void display()             // displays array contents
-      {
-      for(int j=0; j<nElems; j++)       // for each element,
+   {
+      for (int j = 0; j < nElems; j++)       // for each element,
          System.out.print(a[j] + " ");  // display it
       System.out.println("");
-      }
-//--------------------------------------------------------------
+   }
+
+   //--------------------------------------------------------------
    public void insertionSort() {
       int in, out;
-      for(out=1; out<nElems; out++) {
+      for (out = 1; out < nElems; out++) {
          long temp = a[out];
          in = out;
-         while(in>0 && a[in-1] >= temp) // until one is smaller,
+         while (in > 0 && a[in - 1] >= temp) // until one is smaller,
          {
-            a[in] = a[in-1]; // shift item right,
-            --in; }
+            a[in] = a[in - 1]; // shift item right,
+            --in;
+         }
          a[in] = temp;
       } // end for
-    }  // end insertionSort()
+   }  // end insertionSort()
 
-   public void noDups(){
-      //since this array is pre-sorted, we dont have to worry about that. We can just check against the previous element
+   public void noDups() {
+      //array is already sorted
       long newArray[] = new long[nElems];
-      long prev = -1;
-      int newIndex = 0;
-      //loop through the old list
-      for(int i = 0; i < a.length; i++){
+      //first element will always be unique - add it to the new array
+      long prev = a[0];
+      newArray[0] = a[0];
+      //keep track of the current highest position of the new array
+      int position = 1; //starts at 1 because we copied the first item already
+      //loop through the rest of the array and remove duplicates
+      for (int i = 0; i < a.length; i++) {
          //first check to see if prev is the same as current
-         if(a[i] != prev){
-            newArray[newIndex] = a[i];
-            newIndex++;
+         if (a[i] != prev) {
+            newArray[position] = a[i];
+            position++;
          }
          prev = a[i];
-
       }
-      //finally, set the original a to the new array
-      a = newArray;
+
+      //I dont like the trail of 0s this leaves, we can remove them by creating
+      //an additional array and copying the data from the nodups array. This results in o(2n) which is
+      //still just O(n)
+      long[] finalArray = new long[position];
+      System.arraycopy(newArray, 0, finalArray, 0, position);
+
+      //finally, replace the array reference with the new one
+      a = finalArray;
+      //we also need to update nElems bc we changed the size of
+      nElems = position;
    }
 }
+
+
