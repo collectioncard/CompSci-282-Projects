@@ -2,15 +2,22 @@ class QuickSort2App
 {
     public static void main(String[] args)
     {
-        int maxSize = 16;             // array size
+        int maxSize = 8;             // array size
         ArrayIns arr;                 // reference to array
         arr = new ArrayIns(maxSize);  // create the array
 
-        for(int j=0; j<maxSize; j++)  // fill array with
-        {                          // random numbers
-            long n = (int)(java.lang.Math.random()*99);
-            arr.insert(n);
-        }
+
+            arr.insert(43);
+        arr.insert(71);
+        arr.insert(29);
+        arr.insert(65);
+        arr.insert(31);
+        arr.insert(9);
+        arr.insert(17);
+        arr.insert(55);
+
+
+
         arr.display();                // display items
         arr.quickSort();              // quicksort them
         arr.display();                // display them again

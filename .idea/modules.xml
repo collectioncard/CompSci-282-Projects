@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/CompSci-282-Projects.iml" filepath="$PROJECT_DIR$/.idea/CompSci-282-Projects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Excercise Four - power using recursion/Excercise Four.iml" filepath="$PROJECT_DIR$/Excercise Four - power using recursion/Excercise Four.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Excercise One - Array insertion with no duplicates/Excercise One.iml" filepath="$PROJECT_DIR$/Excercise One - Array insertion with no duplicates/Excercise One.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Excercise Three - Circular linked list/Excercise Three.iml" filepath="$PROJECT_DIR$/Excercise Three - Circular linked list/Excercise Three.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Excercise Two - Double ended queue (dqueue)/Excercise Two.iml" filepath="$PROJECT_DIR$/Excercise Two - Double ended queue (dqueue)/Excercise Two.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercise Five Quick Sort/Exercise Five Quick Sort.iml" filepath="$PROJECT_DIR$/Exercise Five Quick Sort/Exercise Five Quick Sort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/untitled/untitled.iml" filepath="$PROJECT_DIR$/untitled/untitled.iml" />
+    </modules>
+  </component>
+</project>

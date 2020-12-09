@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class ArrayIns {
 
     private long[] theArray;
@@ -68,6 +70,7 @@ class ArrayIns {
         numOfComparisons += 3;
 
         swap(center, (right - 1));
+        System.out.println("median pivot is: " + theArray[right - 1]);
         return theArray[right - 1];
     }
 
@@ -103,6 +106,7 @@ class ArrayIns {
         }
 
         swap(leftPointer, (right - 1));
+        System.out.println("part " + Arrays.toString(theArray));
         return leftPointer;
     }
 
